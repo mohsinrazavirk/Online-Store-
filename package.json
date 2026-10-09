@@ -1,18 +1,12 @@
 {
-  "name": "online-store",
+  "name": "online-store-frontend",
   "version": "1.0.0",
-  "description": "Online clothing store for male and female fashion",
-  "main": "index.js",
+  "description": "Frontend for online clothing store",
+  "main": "index.html",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd backend && npm run dev",
-    "client": "cd frontend && npm start",
-    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+    "start": "live-server --port=3000 --open=/index.html"
   },
-  "keywords": ["ecommerce", "clothing", "online-store"],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "live-server": "^1.2.2"
   }
 }

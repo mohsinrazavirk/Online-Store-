@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store - Online Clothing Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-tshirt"></i> Fashion Store</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#male" class="nav-link">Men's</a>
+                <a href="#female" class="nav-link">Women's</a>
+                <a href="#cart" class="nav-link cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart (<span id="cart-count">0</span>)
+                </a>
+                <div class="nav-auth">
+                    <button id="login-btn" class="btn btn-outline">Login</button>
+                    <button id="register-btn" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Style</h1>
+            <p>Shop the latest trends in men's and women's fashion</p>
+            <div class="hero-buttons">
+                <a href="#male" class="btn btn-primary">Shop Men's</a>
+                <a href="#female" class="btn btn-secondary">Shop Women's</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/600x400?text=Fashion+Store" alt="Fashion Store">
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div id="featured-products" class="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Men's Section -->
+    <section id="male" class="products-section">
+        <div class="container">
+            <h2>Men's Collection</h2>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="male">All</button>
+                <button class="filter-btn" data-subcategory="shirts">Shirts</button>
+                <button class="filter-btn" data-subcategory="pants">Pants</button>
+                <button class="filter-btn" data-subcategory="jackets">Jackets</button>
+                <button class="filter-btn" data-subcategory="shoes">Shoes</button>
+            </div>
+            <div id="male-products" class="products-grid">
+                <!-- Men's products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Women's Section -->
+    <section id="female" class="products-section">
+        <div class="container">
+            <h2>Women's Collection</h2>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="female">All</button>
+                <button class="filter-btn" data-subcategory="dresses">Dresses</button>
+                <button class="filter-btn" data-subcategory="tops">Tops</button>
+                <button class="filter-btn" data-subcategory="skirts">Skirts</button>
+                <button class="filter-btn" data-subcategory="shoes">Shoes</button>
+            </div>
+            <div id="female-products" class="products-grid">
+                <!-- Women's products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items">
+                    <!-- Cart items will be loaded here -->
+                </div>
+                <div class="cart-total">
+                    <h4>Total: $<span id="cart-total">0.00</span></h4>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="checkout-btn" class="btn btn-primary">Checkout</button>
+                <button id="clear-cart-btn" class="btn btn-outline">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Register</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Name</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-phone">Phone</label>
+                        <input type="tel" id="register-phone">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-detail">
+            <div class="modal-header">
+                <h3 id="product-title"></h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="product-detail-content">
+                    <div class="product-images">
+                        <img id="product-image" src="" alt="">
+                    </div>
+                    <div class="product-info">
+                        <p id="product-description"></p>
+                        <div class="product-price">
+                            <span id="product-price"></span>
+                        </div>
+                        <div class="product-options">
+                            <div class="form-group">
+                                <label for="product-size">Size</label>
+                                <select id="product-size">
+                                    <option value="">Select Size</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-color">Color</label>
+                                <select id="product-color">
+                                    <option value="">Select Color</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-quantity">Quantity</label>
+                                <input type="number" id="product-quantity" min="1" value="1">
+                            </div>
+                        </div>
+                        <button id="add-to-cart-btn" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fashion Store</h3>
+                    <p>Your one-stop destination for trendy clothing</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#male">Men's Collection</a></li>
+                        <li><a href="#female">Women's Collection</a></li>
+                        <li><a href="#cart">Shopping Cart</a></li>
+                        <li><a href="#home">Home</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@fashionstore.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Style City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fashion Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

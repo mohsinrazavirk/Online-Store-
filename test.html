@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store - Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        .status {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .success {
+            background: rgba(39, 174, 96, 0.2);
+            border: 2px solid #27ae60;
+        }
+        .error {
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Fashion Store Test Page</h1>
+        <p>If you can see this page, your website is working!</p>
+        
+        <div class="status success">
+            <h3>✅ Website Status: WORKING</h3>
+            <p>Your HTML file is loading correctly!</p>
+        </div>
+        
+        <div class="status">
+            <h3>📁 File Structure Check</h3>
+            <p>Make sure you have these files in your frontend folder:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>✅ index.html (this file)</li>
+                <li>✅ styles.css</li>
+                <li>✅ script.js</li>
+            </ul>
+        </div>
+        
+        <div class="status">
+            <h3>🚀 Next Steps</h3>
+            <p>Click the button below to open the main website:</p>
+            <a href="index.html" class="btn">Open Main Website</a>
+        </div>
+        
+        <div class="status">
+            <h3>🔧 Troubleshooting</h3>
+            <p>If the main website doesn't work:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Check if all files are in the same folder</li>
+                <li>Make sure you're opening index.html (not test.html)</li>
+                <li>Try refreshing the page</li>
+                <li>Check browser console for errors (F12)</li>
+            </ul>
+        </div>
+        
+        <div class="status">
+            <h3>📱 How to Open</h3>
+            <p>Double-click on <strong>index.html</strong> in your file explorer, or:</p>
+            <p>Right-click → Open with → Your web browser</p>
+        </div>
+    </div>
+</body>
+</html>
